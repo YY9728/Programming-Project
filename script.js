@@ -1,6 +1,6 @@
 // You can create custom variables here
 let shapeColor = 0;
-let yPosCircle = 250;
+let yPosCircle = 150;
 let xPosSquare = 50;
 let moveAmount = 0;
 
@@ -30,21 +30,18 @@ function draw() {
   circle(mouseX, mouseY, 25);
 
 
-  // create a square
-  fill('darkblue');
-  square(100,200,50);
   // create a text and set font size
-  text('square',100,150);
-  textSize(65);
-  
+  textSize(13);
+  text('Move the square left and right with the a and d keys',50,75);
+  text('Move the pink ball up and down with the w and s keys',50,50);
 
   //set the fill color using the shapeColor variable
   fill(shapeColor);
-  circle(150,350,60);
+  circle(150,350,75);
 
 
 
-  // MOVE OBJECT With a and d keys
+  // MOVE square With a and d keys
     if((keyIsPressed == true) && (key=='a')){
     moveAmount = -5; //negative number moves to left
   }else if((keyIsPressed == true) && (key=='d')){
@@ -56,11 +53,11 @@ function draw() {
   xPosSquare = xPosSquare + moveAmount;
 
   
-  // MOVE OBJECT With w and s keys
+  // MOVE circle With w and s keys
   if((keyIsPressed == true) && (key=='w')){
-    moveAmount = 5; //negative number moves up
+    moveAmount = -5; //negative number moves up
   }else if((keyIsPressed == true) && (key=='s')){
-    moveAmount = -5; //positive number moves down
+    moveAmount = 5; //positive number moves down
   }else{
     moveAmount= 0;
   }
@@ -69,9 +66,9 @@ function draw() {
   
   //Circle
   fill('pink')
-  circle(yPosCircle,450,90);
+  circle(250,yPosCircle,90);
   
-  //ELLIPSE
+  //Square
   fill('lightyellow');
   square(xPosSquare,180,100);
 
